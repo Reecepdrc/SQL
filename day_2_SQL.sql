@@ -53,6 +53,8 @@ insert into ogrenciler2 VALUES (default,'Kemal Can','Ahmet Can',85.5);
 insert into ogrenciler2 VALUES (default,'Ahmet Şen','Ayşe Can',65.5);
 ROLLBACK TO x;
 select * from ogrenciler2;
+select st_name from student;
+select * from student where age>35;
 commit;
 --Transaction kullanımında SERIAL data türü kullanımı tavsiye edilmez.
 --savepointten sonra eklediğimiz veride sayaç mantığı ile çalıştığı için
@@ -162,11 +164,12 @@ adres_id char(5),
 sokak varchar(20),	
 cadde varchar(30),					 
 sehir varchar(20),					 
-CONSTRAINT id_fk FOREIGN KEY (adres_id) REFERENCES calisanlar(id);
+CONSTRAINT id_fk FOREIGN KEY (adres_id) REFERENCES calisanlar(id));
+	
 	INSERT INTO adresler VALUES('10003','Mutlu Sok', '40.Cad.','IST');
 INSERT INTO adresler VALUES('10003','Can Sok', '50.Cad.','Ankara');
 INSERT INTO adresler VALUES('10002','Ağa Sok', '30.Cad.','Antep');
-
+select * from adresler;
 
 
 
